@@ -2,9 +2,23 @@ require 'open-uri'
 require 'pry'
 require 'nokogiri'
 class Scraper
+<<<<<<< HEAD
   
   def self.scrape_index_page(index_url)
     students = []
+=======
+  Student_profile_URL = "https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"
+  students = []
+  
+  def self.scrape_index_page(index_url)
+    html = open(index_url)
+    doc = Nokogiri::HTML(html)
+    doc.css("div.student-card").each do |student|
+      name = student.css('.student-name').text
+      location = student.css('.student_location')
+    binding.pry
+  end
+>>>>>>> bd386e4f2d6bff267d99c65a5ca568c790603880
     
     html = open(index_url)
     doc = Nokogiri::HTML(html)
@@ -56,3 +70,4 @@ class Scraper
 end 
 
 
+#list of all students and attributes : doc.css("div.student-card")
