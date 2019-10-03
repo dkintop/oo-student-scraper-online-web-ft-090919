@@ -59,14 +59,6 @@ class Scraper
       output_hash
       #binding.pry
   end
-    
-      
-  
-    
-    
-    
-
-
 end 
 
 
